@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+Author : Harshad Shettigar
+Description : Index page for application
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Speech To Text</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  label, input { display:block; }
+  input.text { margin-bottom:12px; width:95%; padding: .4em; }
+  fieldset { padding:0; border:0; margin-top:25px; }
+  h1 { font-size: 1.2em; margin: .6em 0; }
+  div#users-contain { width: 350px; margin: 20px 0; }
+  div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+  div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+  .ui-dialog .ui-state-error { padding: .3em; }
+  .validateTips { border: 1px solid transparent; padding: 0.3em; }
+  #overlay {position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,1.5); z-index: 999;}
+  </style>
+</head>
+<div id='overlay'></div>
+<script>
+  document.getElementById("overlay").style.display = "block";
+</script>
+<body>
+  <div id="upload-form" class="container-fluid show-form">
+    <h1 style="margin-left:-15px;">Speech To Text</h1>
+    <h4>Please upload an audio file.</h4>
+    <div class="download-block">
+      <div id="progress"></div>
+      <div id="progressBar"></div>
+      <div class="drop-field" style="height:10em;width:15em;border: 1px dashed gray;position: relative;">
+        <input style="display:none" id="fileinput" type="file" name="file">
+        <label style="height:inherit;width:inherit;padding-top: 4.3em;text-align: center;" for="fileinput">Click or Drag file here to Upload</label>
+      </div>
+    </div>
+    </div>
+    <br/><br/><center>OR</center><br/><br/>
+    <div id="upload-form" class="container-fluid show-form">
+      <h4 style="margin-left:2em">Record an audio.</h4>
+        <div id="controls">
+         <button id="recordButton">Record</button>
+         <button id="pauseButton" disabled>Pause</button>
+         <button id="stopButton" disabled>Stop</button>
+        </div>
+        <h3 style="margin-left:2em">Recordings</h3>
+        <button style="margin-left:2.5em;" id="clearButton" disabled>Clear</button>
+        <ol id="recordingsList">
+        </ol>
+        <div style="margin-left:2em" id="convertButtonDiv"></div>
+      </div>
+    <div id="textDisplay"></div>
+  </body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css'>
+  <link rel='stylesheet' href='scripts/css/ui.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='scripts/js/index_functions.js'></script>
+  <script src='scripts/js/recorder.js'></script>
+  <script src='scripts/js/app.js'></script>
+  <script src='https://res.cloudinary.com/harshad2294/raw/upload/v1535259547/csv_editor/simpleUpload.min.js'></script>
+<script>
+  document.getElementById("overlay").style.display = "none";
+</script>
+</html>
